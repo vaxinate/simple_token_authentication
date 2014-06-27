@@ -29,7 +29,7 @@ module SimpleTokenAuthentication
       # Set the authentication token params if not already present,
       # see http://stackoverflow.com/questions/11017348/rails-api-authentication-by-headers-token
       params_token_name = "#{entity_class.name.singularize.underscore}_token".to_sym
-      param_username_name = "#{entity_class.name.singularize.underscore}_username".to_sym
+      params_username_name = "#{entity_class.name.singularize.underscore}_username".to_sym
       if token = params[params_token_name].blank? && request.headers[header_token_name(entity_class)]
         params[params_token_name] = token
       end
